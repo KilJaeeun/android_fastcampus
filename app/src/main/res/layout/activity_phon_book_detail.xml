@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#303030"
+    android:orientation="vertical"
+
+    tools:context=".PhonBookDetail">
+
+
+    <ImageView
+
+        android:id="@+id/goback"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_margin="20dp"
+        android:background="#FFFFFF"></ImageView>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginBottom="16dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/cat"></ImageView>
+
+    <TextView
+        android:id="@+id/person_detail_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:text="Mynmae"
+        android:textColor="#FFFFFF"
+        android:textSize="40sp"></TextView>
+
+    <TextView
+        android:id="@+id/person_detail_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:text="01040527584"
+        android:textColor="#FFFFFF"
+        android:textSize="40sp"></TextView>
+
+</LinearLayout>

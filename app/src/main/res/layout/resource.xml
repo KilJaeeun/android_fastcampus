@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="안녕"
+        android:gravity="center"
+        android:textSize="50sp"
+        android:textColor="#ffffff"
+        android:background="@color/textview_color"
+        ></TextView>
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="@string/hello"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:background="@color/textview_color"
+        ></TextView>
+</LinearLayout>

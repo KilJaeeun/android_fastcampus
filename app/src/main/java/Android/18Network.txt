@@ -1,0 +1,80 @@
+
+
+네트워크
+-> 통신
+
+
+
+Database <-------> Server <------> Client(app, web ,...)
+글                                      A
+댓글                                    B
+
+
+Local Database 의 한계
+- 동기화가 어렵다.
+- 상호작용이 불가능하다.
+
+
+서버와 통신하는 방법
+- 해당 url 로 요청한다.
+- 인증정보를 보낸다.
+-  json 형식을 사용해서 data를 보낸다.
+- json: javascript object notation => javascript 에서 객체를 만들 때  사용하는 표현식이다.
+
+
+JSON형식
+    - []:  list
+    - {}: 객체
+
+        -> "": 문자열
+        ->""없으면 : 숫자
+
+        [
+            {
+                "id":1,
+                "name": "홍길동",
+                "age": 20,
+                "intro":"나는 홍길동이다!"
+            },
+            {
+                "id":2,
+                "name": "김아무개",
+                "age": 50,
+                "intro":"나는 김아무개이다!"
+            },
+        ]
+
+JSON Parsing
+    -> JSON 을 코틀린이나 자바가 이해할 수 있게 변형하는 과정
+
+Serializable (직렬화)
+-> 자바 시스템 내부에서 사용되는  object 를 외부에서 사용할 수 있도록 byte  형태로 데이터를 바꾸는 것
+-------------------->
+id name age intro
+
+
+코틀린이나, 자바가 이해할 수 있는 틀
+class Person(
+    var id : Int? =null
+    var name : String? =null
+    var age : Int? =null
+    var intro : String?  =null
+)
+Person(1,"김아무개",20,"안녕하세요")
+Request Type
+                   Status Code
+-GET -> 정보 요청 -> 200 OK
+-POST -> 정보 추가 요청 -> 201 Created
+-DELETE -> 정보 삭제 요청
+-PUT -> 정보 수정요청
+
+
+# Status Code
+200번대 -> 성공(처리가 잘 되었다.)
+400번대
+500번대
+
+
+# Library
+- Volly
+- Retrofit

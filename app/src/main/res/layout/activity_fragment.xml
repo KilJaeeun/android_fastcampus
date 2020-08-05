@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FragmentActivity">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="안녕"
+        android:textSize="50sp"></TextView>
+    <!-- <fragment-->
+
+    <!--     android:layout_width="match_parent"-->
+    <!--     android:layout_height="300dp"-->
+    <!--     android:id="@+id/fragment_one"-->
+    <!--     android:name="com.example.fastcampus.FragmentOne"-->
+    <!--     >-->
+
+    <!-- </fragment>-->
+    <Button
+        android:id="@+id/button_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="나와라!"
+        android:textSize="30sp"></Button>
+
+    <Button
+        android:id="@+id/button2_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="사라져!"
+        android:textSize="30sp"></Button>
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#CDDC39"
+        android:orientation="vertical" />
+</LinearLayout>

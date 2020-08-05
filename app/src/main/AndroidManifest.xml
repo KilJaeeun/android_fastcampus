@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.fastcampus">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/MyTheme">
+        <activity android:name=".PermissionActivity">
+
+        </activity>
+        <activity android:name=".RetrofitActivity">
+        </activity>
+        <activity android:name=".NetworkActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".AsyncActivity" />
+        <activity android:name=".RealmActivity" />
+        <activity android:name=".SharedPreferenceActivity" />
+        <activity android:name=".TabPager2Activity" />
+        <activity android:name=".Fragment2" />
+        <activity android:name=".Fragment1" />
+        <activity android:name=".TabPagerActivity" />
+        <activity android:name=".PhoneBookWithRecyclerVIewActivity" />
+        <activity android:name=".RecyclerViewActivity" />
+        <activity android:name=".ListViewActivity" />
+        <activity android:name=".PhonBookDetail" />
+        <activity android:name=".PhoneBook" />
+        <activity android:name=".CellPhoneBook" />
+        <activity android:name=".AddViewActivity" />
+        <activity android:name=".LibraryActivity" />
+        <activity android:name=".ThreadActivity" />
+        <activity android:name=".Cotext_basic" />
+        <activity android:name=".resource" />
+        <activity android:name=".null_safety" />
+        <activity android:name=".FragmentActivity" />
+        <activity android:name=".openInternet" />
+        <activity android:name=".intent_second" />
+        <activity android:name=".intent_first" />
+        <activity android:name=".Calculator" />
+        <activity android:name=".Listener" />
+        <activity android:name=".MainActivity" />
+    </application>
+
+</manifest>

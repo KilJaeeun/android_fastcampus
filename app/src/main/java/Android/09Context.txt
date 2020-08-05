@@ -1,0 +1,13 @@
+
+
+Context
+역할 -> activityManagerService( 개발하기 편하도록 미리 구현해놓은 기능) 에 접근하도록 해주는 역할
+-> 주변정보
+
+안드로이드는 이미 많은 부분들이 만들어져있다. -> 이런 것들을 사용하기 위해서는 context 가 필요한 경우가 많다.
+
+
+종류
+- activity 의 context  (주변 정도)  -> activity 의 주변 정보
+- application 의 context (주변 정도) -> application 의 주변 정보
+- ApplicationContext > ActivityContext
