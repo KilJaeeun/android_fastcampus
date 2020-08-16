@@ -20,7 +20,7 @@ interface RetrofitService {
     ): Call<PersonFromServer>
 
     // 회원가입
-    @POST("user/signup/")
+    @POST("rest-auth/registration/")
     @FormUrlEncoded // 필드를 하나하나 작성할때는 무조건 이걸 작성해줘야한다,
     fun register(
         // @Body register: Register (객체를 받지 않는 서버이다.)

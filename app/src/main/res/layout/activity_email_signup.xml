@@ -28,10 +28,10 @@
             android:id="@+id/username_inputbox"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginBottom="32dp"
             android:background="#FFFFFF"
             android:gravity="center"
-            android:hint="아이디를 입력해주세요."
+            android:layout_marginBottom="32dp"
+            android:hint="username을 입력해주세요."
             android:textColorHint="@color/textview_color"></EditText>
 
 
