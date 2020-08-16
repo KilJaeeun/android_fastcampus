@@ -1,9 +1,7 @@
 package com.example.fastcampus
 
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
+import retrofit2.http.*
 
 // 하부 url 관리
 interface RetrofitService {
@@ -20,5 +18,17 @@ interface RetrofitService {
     fun createStudentEasy(
         @Body person: PersonFromServer
     ): Call<PersonFromServer>
+
+    // 회원가입
+    @POST("user/signup/")
+    @FormUrlEncoded // 필드를 하나하나 작성할때는 무조건 이걸 작성해줘야한다,
+    fun register(
+        // @Body register: Register (객체를 받지 않는 서버이다.)
+        @Field("username") username: String,
+        @Field("password1") password1: String,
+        @Field("password2") password2: String
+
+    ): Call<User>
+
 
 }

@@ -69,5 +69,8 @@ dependencies {
     // retrofit:  네트워크 매니징을 위한 라이브러리 + buffer input stream 해소
     implementation "com.squareup.retrofit2:converter-gson:2.3.0"
 
-
+    //페이스북에서 만든 프로파일러를 사용하자.
+    implementation "com.facebook.stetho:stetho:1.5.0"
+    implementation "com.facebook.stetho:stetho-okhttp3:1.5.0"
+    implementation "com.facebook.stetho:stetho-js-rhino:1.5.0"
 }

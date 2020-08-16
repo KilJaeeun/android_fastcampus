@@ -6,23 +6,26 @@
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
+        android:name=".MasterApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
+
         android:supportsRtl="true"
         android:theme="@style/MyTheme">
-        <activity android:name=".PermissionActivity">
-
-        </activity>
-        <activity android:name=".RetrofitActivity">
-        </activity>
-        <activity android:name=".NetworkActivity">
+        <!--내가 만든 어플리케이션 등록을 android:name 을 가지고 등록가능하다.-->
+        <activity android:name=".EmailSignupActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".PermissionActivity"></activity>
+        <activity android:name=".RetrofitActivity"></activity>
+        <activity android:name=".NetworkActivity">
+
         </activity>
         <activity android:name=".AsyncActivity" />
         <activity android:name=".RealmActivity" />
