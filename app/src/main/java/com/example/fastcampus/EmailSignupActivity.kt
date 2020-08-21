@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
@@ -20,6 +21,7 @@ class EmailSignupActivity : AppCompatActivity() {
     lateinit var userPassword1View: EditText
     lateinit var userPassword2View: EditText
     lateinit var registerBtn: TextView
+    lateinit var loginBtn: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -28,26 +30,34 @@ class EmailSignupActivity : AppCompatActivity() {
             //  startActivity(Intent(this, ))
         } else {
             setContentView(R.layout.activity_email_signup)
-            initView(this@EmailSignupActivity)
-            setupListener()
+            initView(this@EmailSignupActivity) //init 뒤에 register 순서 유의
+            setupListener(this)
 
         }
 
     }
 
 
-    fun setupListener() {
+    fun setupListener(activity: Activity) {
 
         register.setOnClickListener {
             register(this@EmailSignupActivity)
+            loginBtn.setOnClickListener{
+                val sp = activity.getSharedPreferences("login_sp", Context.MODE_PRIVATE)
+                val token  = sp.getString("login",""
+                )
+                Log.d("abxx", "token: "+token)
+            }
         }
 
     }
 
     fun register(activity: Activity) {
-        val username = userNameView.text.toString()
-        val password1 = userPassword1View.text.toString()
-        val password2 = userPassword2View.text.toString()
+
+        // 가입 절차 진행
+        val username =getUserName()
+        val password1 = getUserPassword1()
+        val password2 = getUserPassword2()
         val register = Register(username, password1, password2)
 
         (application as MasterApplication).service.register(
@@ -70,6 +80,8 @@ class EmailSignupActivity : AppCompatActivity() {
                     val user = response.body()
                     val token = user!!.token!!
                     saveUserToken(token, activity)
+                    // 이제 로그인할 수 있는 토큰값이 생김.
+                    (application as  MasterApplication).createRetrofit()
                 }
 
 
@@ -89,6 +101,7 @@ class EmailSignupActivity : AppCompatActivity() {
         userNameView = activity.findViewById(R.id.username_inputbox)
         userPassword2View = activity.findViewById(R.id.password1_inputbox)
         userPassword1View = activity.findViewById(R.id.password2_inputbox)
+        loginBtn = activity.findViewById(R.id.login)
     }
 
     fun getUserName(): String {

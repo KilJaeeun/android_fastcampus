@@ -5,12 +5,11 @@ import retrofit2.http.*
 
 // 하부 url 관리
 interface RetrofitService {
-
     @GET("json/students/")
     fun getStudentsList(): Call<ArrayList<PersonFromServer>>
 
     @POST("json/students/")
-    fun createStudent(
+    fun createStudnet(
         @Body params: HashMap<String, Any>
     ): Call<PersonFromServer>
 
@@ -19,16 +18,22 @@ interface RetrofitService {
         @Body person: PersonFromServer
     ): Call<PersonFromServer>
 
-    // 회원가입
-    @POST("rest-auth/registration/")
-    @FormUrlEncoded // 필드를 하나하나 작성할때는 무조건 이걸 작성해줘야한다,
+    @POST("user/signup/")
+    @FormUrlEncoded
     fun register(
-        // @Body register: Register (객체를 받지 않는 서버이다.)
-        @Field("username") username: String,
+        @Field("username") usernmae: String,
         @Field("password1") password1: String,
-        @Field("password2") password2: String
-
+        @Field("password2") pasword2: String
     ): Call<User>
+
+
+    @POST("user/login/")
+    @FormUrlEncoded
+    fun login(
+        @Field("username") username: String,
+        @Field("password") password: String
+    ): Call<User>
+
 
 
 }

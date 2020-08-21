@@ -46,8 +46,12 @@ class MasterApplication : Application() {
         val client =
             OkHttpClient.Builder().addInterceptor(header).addInterceptor(StethoInterceptor())
                 .build()
-        val retrofit = Retrofit.Builder().baseUrl("http://3.35.90.80/")
-            .addConverterFactory(GsonConverterFactory.create()).client(client).build()
+        val retrofit = Retrofit.Builder()
+            .baseUrl("http://mellowcode.org/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .client(client)
+            .build() // 강사님 url 로 변경함.
+
 
 
         service = retrofit.create(RetrofitService::class.java)
