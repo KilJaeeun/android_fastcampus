@@ -26,15 +26,25 @@ class EmailSignupActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        // 로그인 상태의 경우
         if ((application as MasterApplication).checkIsLogin()) {
-            finish()
-            //  startActivity(Intent(this, ))
+            finish() //activity 종료
+            startActivity(
+                Intent(this@EmailSignupActivity, OutStagramPostListActivity::class.java)
+            )
         } else {
-            setContentView(R.layout.activity_email_signup)
-            initView(this@EmailSignupActivity) //init 뒤에 register 순서 유의
-            setupListener(this)
+            if ((application as MasterApplication).checkIsLogin()) {
+                finish()
+                //  startActivity(Intent(this, ))
+            } else {
+                setContentView(R.layout.activity_email_signup)
+                initView(this@EmailSignupActivity) //init 뒤에 register 순서 유의
+                setupListener(this)
+
+            }
 
         }
+
 
     }
 
@@ -45,10 +55,10 @@ class EmailSignupActivity : AppCompatActivity() {
             register(this@EmailSignupActivity)
             // 로그인 버튼 누르면 로그인 화면으로 전환
 
-            loginBtn.setOnClickListener{
-            startActivity(
-                Intent(this@EmailSignupActivity,LoginActivity::class.java )
-            )
+            loginBtn.setOnClickListener {
+                startActivity(
+                    Intent(this@EmailSignupActivity, LoginActivity::class.java)
+                )
             }
         }
 
@@ -57,7 +67,7 @@ class EmailSignupActivity : AppCompatActivity() {
     fun register(activity: Activity) {
 
         // 가입 절차 진행
-        val username =getUserName()
+        val username = getUserName()
         val password1 = getUserPassword1()
         val password2 = getUserPassword2()
         val register = Register(username, password1, password2)
@@ -83,7 +93,10 @@ class EmailSignupActivity : AppCompatActivity() {
                     val token = user!!.token!!
                     saveUserToken(token, activity)
                     // 이제 로그인할 수 있는 토큰값이 생김.
-                    (application as  MasterApplication).createRetrofit()
+                    (application as MasterApplication).createRetrofit()
+                    activity.startActivity(
+                        Intent(activity, OutStagramPostListActivity::class.java)
+                    )
                 }
 
 
