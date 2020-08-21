@@ -2,6 +2,7 @@ package com.example.fastcampus
 
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -42,11 +43,12 @@ class EmailSignupActivity : AppCompatActivity() {
 
         register.setOnClickListener {
             register(this@EmailSignupActivity)
+            // 로그인 버튼 누르면 로그인 화면으로 전환
+
             loginBtn.setOnClickListener{
-                val sp = activity.getSharedPreferences("login_sp", Context.MODE_PRIVATE)
-                val token  = sp.getString("login",""
-                )
-                Log.d("abxx", "token: "+token)
+            startActivity(
+                Intent(this@EmailSignupActivity,LoginActivity::class.java )
+            )
             }
         }
 
