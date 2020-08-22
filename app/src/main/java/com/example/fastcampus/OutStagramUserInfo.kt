@@ -38,7 +38,7 @@ class OutStagramUserInfo : AppCompatActivity() {
             )
         }
 
-        
+
         // 로그아웃
         logout.setOnClickListener {
             val sp = getSharedPreferences("login_sp", Context.MODE_PRIVATE)

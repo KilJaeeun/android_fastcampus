@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_login.*
 import retrofit2.Call
@@ -15,12 +16,15 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // 로그인 상태의 경우
+        Log.d("s","1")
         if ((application as MasterApplication).checkIsLogin()) {
             finish() //activity 종료
+            Log.d("s","2")
             startActivity(
                 Intent(this@LoginActivity, OutStagramPostListActivity::class.java)
             )
         } else {
+            Log.d("s","13")
             setContentView(R.layout.activity_login)
             // 양 적어서 initView  안만듦
 

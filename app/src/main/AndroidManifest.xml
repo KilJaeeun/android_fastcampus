@@ -14,21 +14,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/MyTheme">
-        <activity android:name=".MytubeDetailActivity"></activity>
-        <activity android:name=".MytubeActivity" >
+        <activity android:name=".OutStagramPostListActivity"></activity>
+        <activity android:name=".OutStagramMyPostListActivity" />
+        <activity android:name=".OutStagramUserInfo" />
+        <activity android:name=".MytubeDetailActivity" />
+        <activity android:name=".MyTubeActivity2"></activity>
+        <activity android:name=".OutStagramUploadActivity" />
+
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".OutStagramUploadActivity" />
-        <activity android:name=".OutStagramMyPostListActivity" />
-        <activity android:name=".OutstagramUserInfo" />
-        <activity android:name=".OutStagramPostListActivity">
-
-        </activity>
-        <activity android:name=".LoginActivity" /> <!-- 내가 만든 어플리케이션 등록을 android:name 을 가지고 등록가능하다. -->
+        </activity> <!-- 내가 만든 어플리케이션 등록을 android:name 을 가지고 등록가능하다. -->
         <activity android:name=".EmailSignupActivity" />
         <activity android:name=".PermissionActivity" />
         <activity android:name=".RetrofitActivity" />
